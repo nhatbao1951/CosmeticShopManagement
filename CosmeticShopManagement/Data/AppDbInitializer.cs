@@ -8,6 +8,8 @@ namespace CosmeticShopManagement.Data
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
+
+
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
 
                 context.Database.EnsureCreated();
@@ -23,8 +25,9 @@ namespace CosmeticShopManagement.Data
                             Description = "The brand that makes the most classy and classic products",
                             Price = "50$",
                             ProductPicture = "https://clmensstore.com/wp-content/uploads/2021/05/Oil_NobleOud_1800x1800-768x768.jpg",
-                            Type = ProductType.Hair,
-                            ExpiriedDate = DateTime.Now,
+                            Type = "Hair",
+                            ExpiriedDate = "20/11/2022",
+                            amount = 10,
                         }
                     });
                     context.SaveChanges();

@@ -6,12 +6,18 @@ namespace CosmeticShopManagement.Models
     {
         [Key]
         public int CompanyId { get; set; }
-        public string CompanyName { get; set; }
-        public string CompanyPicture { get; set; }
-        public string Bio { get; set; }
+
+        [Display(Name = "Profile CompanyName")]
+        public string? CompanyName { get; set; }
+        
+        [Display(Name = "Profile Picture")]
+        public string? CompanyPicture { get; set; }
+
+        [Display(Name = "Biography")]
+        public string? Bio { get; set; }
 
         // Relationships
 
-        public List<Product> Products { get; set; }
+        public List<Product>? Products { get; set; }
     }
 }

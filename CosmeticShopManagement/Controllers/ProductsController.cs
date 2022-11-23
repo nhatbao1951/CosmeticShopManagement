@@ -15,7 +15,8 @@ namespace CosmeticShopManagement.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            var allProducts = await _context.Products.ToListAsync();
+            return View(allProducts);
         }
     }
 }

@@ -1,22 +1,23 @@
 ﻿using CosmeticShopManagement.Data;
+using CosmeticShopManagement.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CosmeticShopManagement.Controllers
 {
     public class OwnerController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IOwnersService _service;
 
-        public OwnerController(AppDbContext context)
+        public OwnerController(IOwnersService service)
         {
-            _context = context;
+            _service = service;
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Owners.ToList();
-            return View();
+            var data = await _service.GetAll();
+            return View(data);
         }
     }
 }

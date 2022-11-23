@@ -1,7 +1,7 @@
-﻿@model IEnumerable<CosmeticShopManagement.Models.Owner>
+﻿@model IEnumerable<CosmeticShopManagement.Models.Company>
 
 @{
-	ViewData["Title"] = "List of Owner";
+	ViewData["Title"] = "List of Company";
 
 }
 
@@ -11,10 +11,10 @@
 		<table class="table">
 			<thead>
 				<tr class="table-center">
-					<th>@Html.DisplayNameFor(model => model.OwnerPicture)</th>
-					<th>@Html.DisplayNameFor(model => model.OwnerName)</th>
+					<th>@Html.DisplayNameFor(model => model.CompanyPicture)</th>
+					<th>@Html.DisplayNameFor(model => model.CompanyName)</th>
 					<th>@Html.DisplayNameFor(model => model.Bio)</th>
-					<th>Owner</th>
+					<th>Company</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,10 +22,10 @@
 				{
 					<tr>
 						<td class="align-middle">
-							<img class="rounded-circle" src="@item.OwnerPicture" alt="@item.OwnerName" style="max-width: 150px"/>
+							<img class="rounded-circle" src="@item.CompanyPicture" alt="@item.CompanyName" style="max-width: 150px" />
 						</td>
 						<td class ="align-middle">
-							@Html.DisplayFor(modelIteam => item.OwnerName)
+							@Html.DisplayFor(modelIteam => item.CompanyName)
 						</td>
 						<td class="align-middle">
 							@Html.DisplayFor(modelIteam => item.Bio)
